@@ -831,3 +831,124 @@ footer {
         right: 5%;
     }
 }
+
+/* ============================= */
+/* MEMORY LANE */
+/* ============================= */
+
+.memory-section {
+    margin-top: 30px;
+}
+
+.memory-description {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+.memory-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.memory-card {
+    position: relative;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(
+        135deg,
+        rgba(37, 32, 77, 0.65),
+        rgba(20, 26, 53, 0.85)
+    );
+    transition: 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(197, 181, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(146, 112, 255, 0.08);
+}
+
+.memory-date {
+    color: var(--lavender);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.memory-content {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin-top: 12px;
+}
+
+.memory-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.delete-memory-btn {
+    background: transparent;
+    border: 1px solid rgba(240, 166, 255, 0.3);
+    color: #f0a6ff;
+    padding: 8px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    transition: 0.3s ease;
+}
+
+.delete-memory-btn:hover {
+    background: rgba(240, 166, 255, 0.1);
+    border-color: #f0a6ff;
+}
+
+.empty-memories {
+    text-align: center;
+    padding: 40px 15px;
+    border: 1px dashed var(--border);
+    border-radius: 14px;
+    margin-top: 22px;
+}
+
+.empty-memories > span {
+    font-size: 34px;
+    color: var(--lavender);
+}
+
+.empty-memories h3 {
+    color: var(--text);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.empty-memories p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .memory-card {
+        padding: 17px;
+    }
+
+    .memory-content {
+        font-size: 12px;
+    }
+
+}
