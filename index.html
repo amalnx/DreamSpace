@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>DreamSpace | A Universe Within You</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +17,8 @@
     <!-- Animated Galaxy Background -->
     <div class="stars"></div>
 
-    <!-- Sidebar -->
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
 
         <div class="logo">
@@ -34,37 +37,49 @@
         </nav>
 
         <div class="sidebar-bottom">
+
             <div class="mini-card">
                 <span>✦</span>
                 <p>Your universe is growing.</p>
                 <small>Keep collecting moments.</small>
             </div>
+
         </div>
 
     </aside>
 
 
-    <!-- Main Content -->
+    <!-- MAIN CONTENT -->
     <main class="main-content" id="home">
 
-        <!-- Header -->
+
+        <!-- HEADER -->
         <header class="topbar">
+
             <div>
                 <p class="date" id="currentDate"></p>
-                <h1>Welcome to your universe <span>✦</span></h1>
-                <p class="subtitle">A little space to dream, reflect and simply be.</p>
+
+                <h1>
+                    Welcome to your universe <span>✦</span>
+                </h1>
+
+                <p class="subtitle">
+                    A little space to dream, reflect and simply be.
+                </p>
             </div>
 
             <div class="profile">
                 <div class="profile-avatar">✧</div>
             </div>
+
         </header>
 
 
-        <!-- Galaxy Hero -->
+        <!-- HERO SECTION -->
         <section class="hero-card" id="galaxy">
 
             <div class="hero-content">
+
                 <span class="eyebrow">✦ YOUR PERSONAL UNIVERSE</span>
 
                 <h2>Your universe,<br>your little escape.</h2>
@@ -74,7 +89,10 @@
                     adds another star to your universe.
                 </p>
 
-                <a href="#journal" class="primary-btn">Explore your space ✧</a>
+                <a href="#journal" class="primary-btn">
+                    Explore your space ✧
+                </a>
+
             </div>
 
             <div class="planet planet-one"></div>
@@ -84,49 +102,71 @@
         </section>
 
 
-        <!-- Statistics -->
+        <!-- STATISTICS -->
         <section class="stats-grid">
 
             <div class="stat-card">
+
                 <span class="stat-icon">✦</span>
+
                 <p>Collected Stars</p>
+
                 <h2 id="starCount">0</h2>
+
                 <small>Your universe is just beginning.</small>
+
             </div>
 
+
             <div class="stat-card">
+
                 <span class="stat-icon">📖</span>
+
                 <p>Journal Entries</p>
+
                 <h2 id="entryCount">0</h2>
+
                 <small>Little moments worth remembering.</small>
+
             </div>
 
+
             <div class="stat-card">
+
                 <span class="stat-icon">♡</span>
+
                 <p>Mood Check-ins</p>
+
                 <h2 id="moodCount">0</h2>
+
                 <small>Every feeling has a place here.</small>
+
             </div>
 
         </section>
+
 
 
         <!-- PERSONAL GALAXY -->
         <section class="section-card personal-galaxy-section" id="personalGalaxySection">
 
             <div class="section-heading">
+
                 <div>
                     <span class="eyebrow">YOUR UNIVERSE IS GROWING</span>
                     <h2>My Personal Galaxy</h2>
                 </div>
 
                 <span class="heading-icon">☾</span>
+
             </div>
+
 
             <p class="galaxy-description">
                 Every star represents a little moment you've collected.
                 Keep writing and checking in to grow your universe.
             </p>
+
 
             <div class="personal-galaxy" id="personalGalaxy">
 
@@ -134,61 +174,97 @@
                     ✦ Your universe is waiting to shine ✦
                 </div>
 
+
                 <!-- Unlockable Moon -->
                 <div class="unlockable-planet moon locked" id="moon">
+
                     <span>☾</span>
+
                     <small>Moon</small>
-                    <div class="planet-status">Unlock at 20 stars</div>
+
+                    <div class="planet-status">
+                        Unlock at 20 stars
+                    </div>
+
                 </div>
 
-                <!-- Unlockable Purple Planet -->
+
+                <!-- Unlockable Dream Planet -->
                 <div class="unlockable-planet purple-planet locked" id="purplePlanet">
+
                     <span></span>
+
                     <small>Dream Planet</small>
-                    <div class="planet-status">Unlock at 50 stars</div>
+
+                    <div class="planet-status">
+                        Unlock at 50 stars
+                    </div>
+
                 </div>
+
 
                 <!-- Unlockable Golden Planet -->
                 <div class="unlockable-planet golden-planet locked" id="goldenPlanet">
+
                     <span></span>
+
                     <small>Golden Planet</small>
-                    <div class="planet-status">Unlock at 100 stars</div>
+
+                    <div class="planet-status">
+                        Unlock at 100 stars
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- Galaxy Progress -->
+
+            <!-- GALAXY PROGRESS -->
             <div class="galaxy-footer">
 
                 <p id="galaxyProgress">
                     Keep collecting stars to grow your galaxy!
                 </p>
 
-                <span>✦ <span id="galaxyStarCount">0</span> stars collected</span>
+                <span>
+                    ✦ <span id="galaxyStarCount">0</span> stars collected
+                </span>
 
             </div>
 
         </section>
 
 
-        <!-- Journal and Inspiration -->
+
+        <!-- JOURNAL AND INSPIRATION -->
         <section class="content-grid">
 
-            <!-- Dream Journal -->
+
+            <!-- DREAM JOURNAL -->
             <div class="section-card" id="journal">
 
                 <div class="section-heading">
+
                     <div>
                         <span class="eyebrow">A SPACE FOR YOUR THOUGHTS</span>
                         <h2>Dream Journal</h2>
                     </div>
 
                     <span class="heading-icon">✎</span>
+
                 </div>
 
-                <p>What's floating around in your mind today?</p>
 
-                <textarea id="journalInput" placeholder="Write your thoughts, dreams or little moments..."></textarea>
+                <p>
+                    What's floating around in your mind today?
+                </p>
+
+
+                <textarea
+                    id="journalInput"
+                    placeholder="Write your thoughts, dreams or little moments..."
+                ></textarea>
+
 
                 <button class="primary-btn" id="saveJournal">
                     Save your thoughts ✦
@@ -197,7 +273,8 @@
             </div>
 
 
-            <!-- Daily Inspiration -->
+
+            <!-- DAILY INSPIRATION -->
             <div class="section-card inspiration-card">
 
                 <span class="eyebrow">A LITTLE REMINDER</span>
@@ -217,17 +294,21 @@
         </section>
 
 
-        <!-- Mood Tracker -->
+
+        <!-- MOOD TRACKER -->
         <section class="section-card mood-section" id="mood">
 
             <div class="section-heading">
+
                 <div>
                     <span class="eyebrow">HOW IS YOUR INNER UNIVERSE?</span>
                     <h2>How are you feeling today?</h2>
                 </div>
 
                 <span class="heading-icon">♡</span>
+
             </div>
+
 
             <div class="mood-options">
 
@@ -236,20 +317,24 @@
                     <small>Amazing</small>
                 </button>
 
+
                 <button class="mood-btn" data-mood="Happy">
                     <span>☺</span>
                     <small>Happy</small>
                 </button>
+
 
                 <button class="mood-btn" data-mood="Calm">
                     <span>☾</span>
                     <small>Calm</small>
                 </button>
 
+
                 <button class="mood-btn" data-mood="Okay">
                     <span>☁</span>
                     <small>Okay</small>
                 </button>
+
 
                 <button class="mood-btn" data-mood="Sad">
                     <span>☂</span>
@@ -258,44 +343,81 @@
 
             </div>
 
-            <p id="moodMessage">Your feelings are always welcome here.</p>
+
+            <p id="moodMessage">
+                Your feelings are always welcome here.
+            </p>
 
         </section>
 
 
-        <!-- Memory Lane -->
-        <section class="section-card" id="memories">
+
+        <!-- MEMORY LANE -->
+        <section class="section-card memory-section" id="memories">
 
             <div class="section-heading">
+
                 <div>
                     <span class="eyebrow">LITTLE MOMENTS, FOREVER</span>
                     <h2>Memory Lane</h2>
                 </div>
 
                 <span class="heading-icon">✧</span>
+
             </div>
 
-            <p>
-                A special place for your favourite memories.
-                Your memory collection is waiting to begin.
+
+            <p class="memory-description">
+                Look back at your thoughts, dreams and little moments.
+                Every memory tells a part of your story.
             </p>
+
+
+            <!-- MEMORY TIMELINE -->
+            <div class="memory-timeline" id="memoryTimeline">
+
+                <!-- Saved memories will appear here automatically -->
+
+            </div>
+
+
+            <!-- EMPTY MEMORY MESSAGE -->
+            <div class="empty-memories" id="emptyMemories">
+
+                <span>☾</span>
+
+                <h3>Your memory lane is waiting...</h3>
+
+                <p>
+                    Save your first journal entry and watch your
+                    memories appear here.
+                </p>
+
+            </div>
 
         </section>
 
 
-        <!-- Footer -->
+
+        <!-- FOOTER -->
         <footer>
+
             Made with ✦ and a little bit of stardust.
+
             <p>DreamSpace © 2026</p>
+
         </footer>
 
     </main>
 
 
-    <!-- JavaScript -->
+
+    <!-- JAVASCRIPT FILES -->
     <script src="js/app.js"></script>
     <script src="js/journal.js"></script>
     <script src="js/mood.js"></script>
+    <script src="js/memories.js"></script>
 
 </body>
+
 </html>
