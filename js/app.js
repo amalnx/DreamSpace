@@ -1,3 +1,4 @@
+
 // DREAMSPACE - MAIN APPLICATION
 
 // Display current date
@@ -12,7 +13,8 @@ dateElement.textContent = today.toLocaleDateString("en-US", {
     day: "numeric"
 });
 
-// Daily inspirational quotes
+
+// DAILY INSPIRATIONAL QUOTES
 const quotes = [
     "Even the darkest night gives way to a sky full of stars.",
     "You are allowed to grow at your own pace.",
@@ -24,7 +26,6 @@ const quotes = [
     "You are made of stardust and endless possibilities."
 ];
 
-// Display random quote
 const quoteElement = document.getElementById("dailyQuote");
 const quoteButton = document.getElementById("newQuote");
 
@@ -40,7 +41,73 @@ quoteButton.addEventListener("click", () => {
 
 });
 
-// Update dashboard statistics
+
+// PERSONAL GALAXY
+function updateGalaxy() {
+
+    const stars = Number(localStorage.getItem("dreamStars")) || 0;
+
+    const galaxy = document.getElementById("personalGalaxy");
+    const galaxyMessage = document.getElementById("galaxyMessage");
+    const galaxyProgress = document.getElementById("galaxyProgress");
+    const galaxyStarCount = document.getElementById("galaxyStarCount");
+
+    // Update star count
+    galaxyStarCount.textContent = stars;
+
+    // Remove previously generated stars
+    galaxy.querySelectorAll(".galaxy-star").forEach(star => star.remove());
+
+    // Create glowing stars
+    for (let i = 0; i < stars; i++) {
+
+        const star = document.createElement("span");
+
+        star.classList.add("galaxy-star");
+
+        const size = Math.random() * 4 + 2;
+
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        star.style.left = Math.random() * 96 + "%";
+        star.style.top = Math.random() * 90 + "%";
+
+        star.style.animationDelay = Math.random() * 2 + "s";
+
+        galaxy.appendChild(star);
+    }
+
+    // Galaxy messages and milestones
+    if (stars === 0) {
+
+        galaxyMessage.textContent = "✦ Your universe is waiting to shine ✦";
+        galaxyProgress.textContent = "Start collecting stars to grow your galaxy!";
+
+    } else if (stars < 20) {
+
+        galaxyMessage.textContent = "✨ Your little universe is beginning to shine!";
+        galaxyProgress.textContent = "Reach 20 stars to unlock your next milestone!";
+
+    } else if (stars < 50) {
+
+        galaxyMessage.textContent = "☾ Your galaxy is getting brighter!";
+        galaxyProgress.textContent = "Reach 50 stars to unlock a new milestone!";
+
+    } else if (stars < 100) {
+
+        galaxyMessage.textContent = "✦ Your universe is full of possibilities!";
+        galaxyProgress.textContent = "Reach 100 stars to unlock a special planet!";
+
+    } else {
+
+        galaxyMessage.textContent = "🌌 Welcome to your beautiful universe!";
+        galaxyProgress.textContent = "You've unlocked your special planet!";
+    }
+}
+
+
+// UPDATE DASHBOARD STATISTICS
 function updateStats() {
 
     const entries = JSON.parse(localStorage.getItem("dreamEntries")) || [];
@@ -52,7 +119,9 @@ function updateStats() {
     document.getElementById("entryCount").textContent = entries.length;
     document.getElementById("moodCount").textContent = moods.length;
 
+    updateGalaxy();
 }
 
-// Load dashboard data
+
+// LOAD DASHBOARD DATA
 updateStats();
