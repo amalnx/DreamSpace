@@ -35,5 +35,5 @@ saveJournalButton.addEventListener("click", () => {
     alert("Your thoughts have been saved! You earned 5 stars!");
 
     updateStats();
-
+    window.dispatchEvent(new Event("journalUpdated"));
 });
