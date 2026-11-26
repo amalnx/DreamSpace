@@ -1,7 +1,11 @@
 
 // DREAMSPACE - MAIN APPLICATION
 
-// Display current date
+
+// ==============================
+// DISPLAY CURRENT DATE
+// ==============================
+
 const dateElement = document.getElementById("currentDate");
 
 const today = new Date();
@@ -14,7 +18,10 @@ dateElement.textContent = today.toLocaleDateString("en-US", {
 });
 
 
+// ==============================
 // DAILY INSPIRATIONAL QUOTES
+// ==============================
+
 const quotes = [
     "Even the darkest night gives way to a sky full of stars.",
     "You are allowed to grow at your own pace.",
@@ -42,7 +49,10 @@ quoteButton.addEventListener("click", () => {
 });
 
 
+// ==============================
 // PERSONAL GALAXY
+// ==============================
+
 function updateGalaxy() {
 
     const stars = Number(localStorage.getItem("dreamStars")) || 0;
@@ -55,8 +65,10 @@ function updateGalaxy() {
     // Update star count
     galaxyStarCount.textContent = stars;
 
+
     // Remove previously generated stars
     galaxy.querySelectorAll(".galaxy-star").forEach(star => star.remove());
+
 
     // Create glowing stars
     for (let i = 0; i < stars; i++) {
@@ -78,50 +90,134 @@ function updateGalaxy() {
         galaxy.appendChild(star);
     }
 
-    // Galaxy messages and milestones
+
+    // ==============================
+    // PLANET UNLOCKING SYSTEM
+    // ==============================
+
+    const planets = [
+        {
+            id: "moon",
+            required: 20
+        },
+        {
+            id: "purplePlanet",
+            required: 50
+        },
+        {
+            id: "goldenPlanet",
+            required: 100
+        }
+    ];
+
+    planets.forEach(planetData => {
+
+        const planet = document.getElementById(planetData.id);
+
+        if (!planet) return;
+
+        const status = planet.querySelector(".planet-status");
+
+        if (!status) return;
+
+        if (stars >= planetData.required) {
+
+            planet.classList.remove("locked");
+            planet.classList.add("unlocked");
+
+            status.textContent = "Unlocked ✦";
+
+        } else {
+
+            planet.classList.remove("unlocked");
+            planet.classList.add("locked");
+
+            status.textContent = `Unlock at ${planetData.required} stars`;
+        }
+
+    });
+
+
+    // ==============================
+    // GALAXY MESSAGES & MILESTONES
+    // ==============================
+
     if (stars === 0) {
 
         galaxyMessage.textContent = "✦ Your universe is waiting to shine ✦";
-        galaxyProgress.textContent = "Start collecting stars to grow your galaxy!";
+
+        galaxyProgress.textContent =
+            "Start collecting stars to grow your galaxy!";
 
     } else if (stars < 20) {
 
-        galaxyMessage.textContent = "✨ Your little universe is beginning to shine!";
-        galaxyProgress.textContent = "Reach 20 stars to unlock your next milestone!";
+        galaxyMessage.textContent =
+            "✨ Your little universe is beginning to shine!";
+
+        galaxyProgress.textContent =
+            "Reach 20 stars to unlock the Moon!";
 
     } else if (stars < 50) {
 
-        galaxyMessage.textContent = "☾ Your galaxy is getting brighter!";
-        galaxyProgress.textContent = "Reach 50 stars to unlock a new milestone!";
+        galaxyMessage.textContent =
+            "☾ Your galaxy is getting brighter!";
+
+        galaxyProgress.textContent =
+            "Reach 50 stars to unlock the Dream Planet!";
 
     } else if (stars < 100) {
 
-        galaxyMessage.textContent = "✦ Your universe is full of possibilities!";
-        galaxyProgress.textContent = "Reach 100 stars to unlock a special planet!";
+        galaxyMessage.textContent =
+            "✦ Your universe is full of possibilities!";
+
+        galaxyProgress.textContent =
+            "Reach 100 stars to unlock the Golden Planet!";
 
     } else {
 
-        galaxyMessage.textContent = "🌌 Welcome to your beautiful universe!";
-        galaxyProgress.textContent = "You've unlocked your special planet!";
+        galaxyMessage.textContent =
+            "🌌 Welcome to your beautiful universe!";
+
+        galaxyProgress.textContent =
+            "You've unlocked all three planets!";
+
     }
 }
 
 
+// ==============================
 // UPDATE DASHBOARD STATISTICS
+// ==============================
+
 function updateStats() {
 
-    const entries = JSON.parse(localStorage.getItem("dreamEntries")) || [];
-    const moods = JSON.parse(localStorage.getItem("moodEntries")) || [];
+    const entries =
+        JSON.parse(localStorage.getItem("dreamEntries")) || [];
 
-    const stars = Number(localStorage.getItem("dreamStars")) || 0;
+    const moods =
+        JSON.parse(localStorage.getItem("moodEntries")) || [];
 
+    const stars =
+        Number(localStorage.getItem("dreamStars")) || 0;
+
+
+    // Update dashboard cards
     document.getElementById("starCount").textContent = stars;
-    document.getElementById("entryCount").textContent = entries.length;
-    document.getElementById("moodCount").textContent = moods.length;
 
+    document.getElementById("entryCount").textContent =
+        entries.length;
+
+    document.getElementById("moodCount").textContent =
+        moods.length;
+
+
+    // Update Personal Galaxy
     updateGalaxy();
 }
 
 
+// ==============================
 // LOAD DASHBOARD DATA
+// ==============================
+
 updateStats();
